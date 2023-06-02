@@ -1,0 +1,13 @@
+.leftSidebar .container .register {
+  padding: 2rem 1rem;
+}
+
+#transporter-list {
+  width: 250px;
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+#transporter-list option:checked {
+  background-color: #0b8428;
+  color: white;
+}

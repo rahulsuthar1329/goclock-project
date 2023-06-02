@@ -1,0 +1,135 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #28a745;
+}
+.register {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 25px 0px;
+  width: 350px;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 8px;
+}
+.register h2 {
+  text-align: center;
+  padding-bottom: 10px;
+  font-weight: 600;
+  color: #0b8428;
+}
+.register > form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 80%;
+}
+.register > form > input {
+  padding: 8px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  outline: none;
+  border-radius: 5px;
+  width: 250px;
+}
+.register form .radioSection {
+  font-size: 13px;
+  width: 90%;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.register form #address {
+  resize: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  width: 250px;
+}
+.register form .radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.register form .radio label {
+  cursor: pointer;
+}
+.register form .radio input[type="radio"] {
+  font-size: 10px;
+  cursor: pointer;
+}
+.register form button {
+  border-radius: 5px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  padding: 8px 15px;
+  cursor: pointer;
+  width: 250px;
+}
+.register form button:hover {
+  background-color: #0b8428;
+}
+.registerNow {
+  color: #0b8428;
+  text-decoration: none;
+}
+.registerNow:hover {
+  color: black;
+}
+.register p {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* For Radio Button Style */
+input[type="radio"]:after {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  left: -1px;
+  top: -1px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+}
+
+input[type="radio"]:checked:after {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  position: relative;
+  background-color: #0b8428;
+  content: "";
+  left: -1px;
+  top: -1px;
+  display: inline-block;
+  visibility: visible;
+}
+
+@media (max-width: 480px) {
+  .register {
+    width: 85%;
+  }
+  .register form .radioSection {
+    padding: 5px 0;
+  }
+  input[type="radio"]:after,
+  input[type="radio"]:checked:after {
+    top: 0;
+    left: 0;
+  }
+  .register form .radio label {
+    cursor: default;
+  }
+}

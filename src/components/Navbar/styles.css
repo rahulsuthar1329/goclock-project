@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 5%;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+  position: fixed;
+}
+.navbar h2 {
+  color: #0b8428;
+  font-size: 30px;
+}
+.navbar button {
+  border-radius: 5px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.navbar button:hover {
+  background-color: #0b8428;
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 5px 20px;
+  }
+}
