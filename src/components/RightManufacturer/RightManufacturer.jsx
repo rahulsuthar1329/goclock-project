@@ -18,7 +18,9 @@ const RightManufacturer = () => {
     let data = null;
     const getData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/data/manufacturer");
+        const res = await axios.get(
+          "https://goclock-project-backend.vercel.app/data/manufacturer"
+        );
         data = res.data.filter((obj) => user._id === obj.manufacturer);
         setAllData(data);
         setFilteredData(data);

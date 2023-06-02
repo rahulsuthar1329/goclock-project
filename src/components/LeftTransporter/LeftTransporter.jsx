@@ -14,7 +14,9 @@ const LeftTransporter = ({ color }) => {
     const user = JSON.parse(localStorage.getItem("user"));
     const getData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/data/manufacturer");
+        const res = await axios.get(
+          "https://goclock-project-backend.vercel.app/data/manufacturer"
+        );
         const data = res.data.filter((obj) => user._id === obj.transporter);
         setListData(data);
         const transformedArray = res.data
@@ -44,17 +46,23 @@ const LeftTransporter = ({ color }) => {
       if (!Object.keys(select).length || !price || !user._id) {
         toast.warn("Fill all the fields!");
       } else {
-        let res = await axios.post("http://localhost:5000/post/transporter", {
-          orderId: select.value,
-          price,
-          transporter: user._id,
-          manufacturer: select.manufacturer,
-        });
+        let res = await axios.post(
+          "https://goclock-project-backend.vercel.app/post/transporter",
+          {
+            orderId: select.value,
+            price,
+            transporter: user._id,
+            manufacturer: select.manufacturer,
+          }
+        );
 
-        res = await axios.post("http://localhost:5000/post/manufacturerprice", {
-          orderId: select.value,
-          price,
-        });
+        res = await axios.post(
+          "https://goclock-project-backend.vercel.app/post/manufacturerprice",
+          {
+            orderId: select.value,
+            price,
+          }
+        );
 
         toast.success("Message Sent Successfully.");
         window.location.reload();

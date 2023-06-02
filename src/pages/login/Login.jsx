@@ -26,10 +26,13 @@ function Login() {
       if (email === "" || password === "")
         toast.warn("All the fields are required!");
       else {
-        const res = await axios.post("http://localhost:5000/auth/login", {
-          email,
-          password,
-        });
+        const res = await axios.post(
+          "https://goclock-project-backend.vercel.app/auth/login",
+          {
+            email,
+            password,
+          }
+        );
         if (res.status === 200) {
           const user = res?.data?.user;
           localStorage.setItem("user", JSON.stringify(user));

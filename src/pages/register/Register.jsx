@@ -30,14 +30,17 @@ function Register() {
       )
         toast.warn("All the fields are required!");
       else {
-        const res = await axios.post("http://localhost:5000/auth/register", {
-          name,
-          email,
-          password,
-          address,
-          role,
-          mobile,
-        });
+        const res = await axios.post(
+          "https://goclock-project-backend.vercel.app/auth/register",
+          {
+            name,
+            email,
+            password,
+            address,
+            role,
+            mobile,
+          }
+        );
         if (res.status === 201) {
           toast.success("Registered Successfully...");
           setTimeout(() => {

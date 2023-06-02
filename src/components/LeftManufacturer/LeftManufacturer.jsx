@@ -16,7 +16,9 @@ const LeftManufacturer = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const res = await axios.get("http://localhost:5000/user/transporter");
+      const res = await axios.get(
+        "https://goclock-project-backend.vercel.app/user/transporter"
+      );
       const transformedArray = res.data.map((obj) => {
         return {
           value: obj._id,
@@ -44,7 +46,7 @@ const LeftManufacturer = () => {
         toast.warn("Fill all the fields!");
       else {
         const res = await axios.post(
-          "http://localhost:5000/post/manufacturer",
+          "https://goclock-project-backend.vercel.app/post/manufacturer",
           {
             orderId,
             to,

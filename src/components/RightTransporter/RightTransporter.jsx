@@ -17,7 +17,9 @@ const RightTransporter = ({ color }) => {
     const user = JSON.parse(localStorage.getItem("user"));
     const getData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/data/manufacturer");
+        const res = await axios.get(
+          "https://goclock-project-backend.vercel.app/data/manufacturer"
+        );
         const data = res.data.filter((obj) => user._id === obj.transporter);
         setAllData(data);
         setFilteredData(data);
