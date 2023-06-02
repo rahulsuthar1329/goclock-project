@@ -16,7 +16,6 @@ const LeftTransporter = ({ color }) => {
       try {
         const res = await axios.get("http://localhost:5000/data/manufacturer");
         const data = res.data.filter((obj) => user._id === obj.transporter);
-        console.log(data);
         setListData(data);
         const transformedArray = res.data
           .map((obj) => {
@@ -41,7 +40,6 @@ const LeftTransporter = ({ color }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const user = JSON.parse(localStorage.getItem("user"));
-    console.log(select, price, user._id);
     try {
       if (!Object.keys(select).length || !price || !user._id) {
         toast.warn("Fill all the fields!");

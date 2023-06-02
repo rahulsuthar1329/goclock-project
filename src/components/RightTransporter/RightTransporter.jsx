@@ -19,7 +19,6 @@ const RightTransporter = ({ color }) => {
       try {
         const res = await axios.get("http://localhost:5000/data/manufacturer");
         const data = res.data.filter((obj) => user._id === obj.transporter);
-        console.log(data);
         setAllData(data);
         setFilteredData(data);
       } catch (error) {

@@ -12,7 +12,6 @@ const RightManufacturer = () => {
   const [renderId, setRenderId] = useState("");
   const [search, setSearch] = useState("");
   const [filteredData, setFilteredData] = useState("");
-  const [transporterData, setTransporterData] = useState(null);
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -23,32 +22,12 @@ const RightManufacturer = () => {
         data = res.data.filter((obj) => user._id === obj.manufacturer);
         setAllData(data);
         setFilteredData(data);
-        console.log(data);
-        // const res1 = await axios.get("http://localhost:5000/data/transporter");
-        // let result = [{}];
-        // for (let i = 0; i < data.length; i++) {
-        //   let temp = data[i].orderId;
-        //   console.log("temp : ", temp);
-        //   for (let j = 0; res1.data.length; j++) {
-        //     if (res1.data[j].orderId === temp) {
-        //       result.push({ orderId: temp, price: res1.data[j].price });
-        //     }
-        //   }
-        // }
       } catch (error) {
         console.log(error);
         toast.error("Data fetching Error!");
       }
     };
-    const getTransporterData = async () => {
-      try {
-      } catch (error) {
-        toast.error("Transporter Data Fetching Error!");
-        console.log(error);
-      }
-    };
     getData();
-    getTransporterData();
   }, []);
 
   const handleChange = (setState) => (event) => {
@@ -81,7 +60,7 @@ const RightManufacturer = () => {
   return (
     <div className="rightSidebar">
       <div className="container">
-        <h3>Messages</h3>
+        <h2>Messages</h2>
         <div className="searchSection">
           <div className="searchBar">
             <input

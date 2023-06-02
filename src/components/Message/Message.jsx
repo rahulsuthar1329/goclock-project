@@ -3,9 +3,8 @@ import FullMessage from "../FullMessage/FullMessage";
 import "./styles.css";
 import { ImCross } from "react-icons/im";
 const Message = ({ data }) => {
-  const [render, setRender] = useState("hide");
   return (
-    <div className={`message`} onClick={() => setRender("")}>
+    <div className={`message`}>
       <div className="row">
         <h4>Order ID : {data.orderId}</h4>
         {data.price ? (
